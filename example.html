@@ -1,0 +1,91 @@
+<!--
++---------------------------------------------------+
+|	jQuery code is located right before body ends	|
++---------------------------------------------------+
+-->
+<html>
+	<head>
+		<title>Loceo jquery plugin example code</title>
+		<style>
+			body{margin:0 10% auto 10%;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 14px;line-height: 20px;color: #333333;background-color: #ffffff;}
+			input {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 14px;font-weight: normal;line-height: 20px;height:30px;}
+			code,pre {padding: 0 3px 2px;font-family: Monaco, Menlo, Consolas, "Courier New", monospace;font-size: 12px;color: #333333;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;}
+			pre {display: block;padding: 9.5px;margin: 10px 0 10px 10px;font-size: 13px;line-height: 20px;word-break: break-all;word-wrap: break-word;white-space: pre;white-space: pre-wrap;background-color: #f5f5f5;border: 1px solid #ccc;border: 1px solid rgba(0, 0, 0, 0.15);-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;
+}
+			h1{margin-top:2.5em;}
+			.alert-info{margin:5px;border-radius:5px;padding:10px;color: #3A87AD;background-color: #D9EDF7;border-color: #BCE8F1;}
+		</style>
+
+
+
+
+
+
+	</head>
+	<body>
+		<h1 style="font-size:3em;margin:0.5em auto 1em;line-height:1em;">Loceo jQuery-plugin examples</h1>
+		<div class="alert-info">For production quotas you need to register a developer-key at <a href="https://loceo.se" target="_blank">Loceo.se</a></div>
+		<h1>Postalcode to city</h1>
+		<p>The fantastic postalcode lookup API from Loceo. Great for increasing conversions in e-commerce or speeding up sign-ups. Returns a feature-geojson.</p>
+		<input id="postalcode_input" placeholder="Postalcode" />
+		<input disabled id="city_output" placeholder="City prints here" size="30" />
+		<pre>$('#postalcode_input').loceo('city', {key:null}, function(feature){
+	if(feature!=null && feature.propertie!=null && feature.properties.city!=null){
+		$('#city_output').val(feature.properties.city);
+	}
+});</pre>
+
+		<h1>City to postalcode</h1>
+		<p>This API is mostly an reverse of the Postalcode API. The response is a Geojson-featureCollection with postalcodes, for larges cities this might be several hundred.</p>
+		<input id="city_input" placeholder="City" />
+		<input disabled id="postalcode_output" placeholder="Postalcode prints here" size="30" />
+		<pre>$('#city_input').loceo('postalcode', {key:null}, function(collection){
+	// Important to check answer
+	if(collection!=null && collection.features!=null && collection.features[0]!=null){
+		$('#postalcode_output').val(collection.features[0].properties.postalcode);
+	}
+});</pre>
+
+
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.loceo.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				//	+---------------------------------------+
+				//	|			START OF EXAMPLE CODE		|
+				//	+---------------------------------------+
+
+				/*
+				 *	Translate a postalcode to city using a callback, notice the data returned is GeoJSON.
+				 *	This method does not use any css.
+				 */
+				$('#postalcode_input').loceo('city', {'key':null}, function(feature){
+					// Check answer
+					if(feature!=null && feature.propertie!=null && feature.properties.city!=null){
+						$('#city_output').val(feature.properties.city);
+					}
+				});
+
+				/*
+				 *	Translate a city to postalcode using callback, notice the data returned is GeoJSON.
+				 *	This method does not use any css.
+				 */
+				$('#city_input').loceo('postalcode', {'key':null}, function(collection){
+					// Check answer
+					if(collection!=null && collection.features!=null && collection.features.length>0){
+						$('#postalcode_output').val(collection.features[0].properties.postalcode);
+					}
+
+				});
+
+
+				//	+---------------------------------------+
+				//	|			END OF EXAMPLE CODE			|
+				//	+---------------------------------------+
+
+			});
+		</script>
+	</body>
+</html>
