@@ -36,17 +36,17 @@ End-point: https://api.loceo.se/v1/geocoding/postalcode
 ##How to use
 1. Download this plugin and [jQuery](http://jquery.com) (or use [Google CDN](http://jquery.com/download/))
 
-2. Include jQuery and this plugin right before the `<body>`-tag.
+2. Include jQuery and this plugin right before the `</body>`-tag.
 
-```html
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="jquery.loceo.js"></script>
-```
+ ```html
+ <script type="text/javascript" src="jquery.min.js"></script>
+ <script type="text/javascript" src="jquery.loceo.js"></script>
+ ```
 
-3. Initiate the plugin using the examples above. Put script right before the `body`-tag (after code in step 2). Change `#postalcode_input` and `#city_output` to your desired html-elements. Optional: Change `null` to your developer-key.
+3. Initiate the desired plugin using the examples from above. Put this `<script>`-tag right before the `</body>`-tag (after code in step 2). Change `#postalcode_input` and `#city_output` to your desired html-elements. Optional: Change `null` to your developer-key.
 
-```html
-<script type="text/javascript">
+ ```html
+ <script type="text/javascript">
 	$(document).ready(function(){
 		$('#postalcode_input').loceo('city', {key:null}, function(feature){
 			if(feature!=null && feature.propertie!=null && feature.properties.city!=null){
@@ -54,8 +54,8 @@ End-point: https://api.loceo.se/v1/geocoding/postalcode
 			}
 		});
 	});
-</script>
-```
+ </script>
+ ```
 
 4. Satisfaction!
 
