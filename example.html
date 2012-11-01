@@ -30,7 +30,7 @@
 		<input id="postalcode_input" placeholder="Postalcode" />
 		<input disabled id="city_output" placeholder="City prints here" size="30" />
 		<pre>$('#postalcode_input').loceo('city', {key:null}, function(feature){
-	if(feature!=null && feature.propertie!=null && feature.properties.city!=null){
+	if(feature!=null && feature.properties!=null && feature.properties.city!=null){
 		$('#city_output').val(feature.properties.city);
 	}
 });</pre>
@@ -63,7 +63,7 @@
 				 */
 				$('#postalcode_input').loceo('city', {'key':null}, function(feature){
 					// Check answer
-					if(feature!=null && feature.propertie!=null && feature.properties.city!=null){
+					if(feature!=null && feature.properties!=null && feature.properties.city!=null){
 						$('#city_output').val(feature.properties.city);
 					}
 				});

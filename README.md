@@ -12,7 +12,7 @@ Enables you to resolve a postalcode to city. Returns a Geojson-feature with coor
 
 ```javascript
 $('#postalcode_input').loceo('city', {key:null}, function(feature){
-	if(feature!=null && feature.propertie!=null && feature.properties.city!=null){
+	if(feature!=null && feature.properties!=null && feature.properties.city!=null){
 		$('#city_output').val(feature.properties.city);
 	}
 });
@@ -49,7 +49,7 @@ End-point: https://api.loceo.se/v1/geocoding/postalcode
  <script type="text/javascript">
 	$(document).ready(function(){
 		$('#postalcode_input').loceo('city', {key:null}, function(feature){
-			if(feature!=null && feature.propertie!=null && feature.properties.city!=null){
+			if(feature!=null && feature.properties!=null && feature.properties.city!=null){
 				$('#city_output').val(feature.properties.city);
 			}
 		});
