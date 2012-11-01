@@ -24,7 +24,7 @@ $('#postalcode_input').loceo('city', {key:null}, function(feature){
 End-point: https://api.loceo.se/v1/geocoding/city
 
 ###City to postalcode
-Enables you to resolve a city to postalcodes. Notice you can get several hundred of postalcodes which can be to boxes. Returns a [Geojson-featureCollection](http://www.geojson.org/geojson-spec.html#feature-collection-objects) with coordinates.
+Enables you to resolve a city to postalcodes. Notice you can get several hundred of postalcodes. Returns a [Geojson-featureCollection](http://www.geojson.org/geojson-spec.html#feature-collection-objects) with coordinates.
 
 ```javascript
 $('#city_input').loceo('postalcode', {key:null}, function(collection){
@@ -44,7 +44,7 @@ End-point: https://api.loceo.se/v1/geocoding/postalcode
 
  ```html
  <script type="text/javascript" src="jquery.min.js"></script>
- <script type="text/javascript" src="jquery.loceo.js"></script>
+ <script type="text/javascript" src="jquery.loceo-1.0.1.js"></script>
  ```
 
 3. Initiate the desired plugin using the examples from above. Put this `<script>`-tag right before the `</body>`-tag (after code in step 2). Change `#postalcode_input` and `#city_output` to your desired html-elements. Optional: Change `null` to your developer-key.
