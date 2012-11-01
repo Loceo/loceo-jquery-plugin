@@ -14,6 +14,7 @@ Enables you to resolve a postalcode to city. Returns a [Geojson-feature](http://
 
 ```javascript
 $('#postalcode_input').loceo('city', {key:null}, function(feature){
+	$('#city_output').val('');
 	if(feature!=null && feature.properties!=null && feature.properties.city!=null){
 		$('#city_output').val(feature.properties.city);
 	}
@@ -27,6 +28,7 @@ Enables you to resolve a city to postalcodes. Notice you can get several hundred
 
 ```javascript
 $('#city_input').loceo('postalcode', {key:null}, function(collection){
+	$('#postalcode_output').val('');
 	if(collection!=null && collection.features!=null && collection.features.length>0){
 		$('#postalcode_output').val(collection.features[0].properties.postalcode);
 	}
@@ -51,6 +53,7 @@ End-point: https://api.loceo.se/v1/geocoding/postalcode
  <script type="text/javascript">
 	$(document).ready(function(){
 		$('#postalcode_input').loceo('city', {key:null}, function(feature){
+			$('#city_output').val('');
 			if(feature!=null && feature.properties!=null && feature.properties.city!=null){
 				$('#city_output').val(feature.properties.city);
 			}

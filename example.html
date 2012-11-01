@@ -30,6 +30,8 @@
 		<input id="postalcode_input" placeholder="Postalcode" />
 		<input disabled id="city_output" placeholder="City prints here" size="30" />
 		<pre>$('#postalcode_input').loceo('city', {key:null}, function(feature){
+	$('#city_output').val('');
+	// Important to check answer
 	if(feature!=null && feature.properties!=null && feature.properties.city!=null){
 		$('#city_output').val(feature.properties.city);
 	}
@@ -40,6 +42,7 @@
 		<input id="city_input" placeholder="City" />
 		<input disabled id="postalcode_output" placeholder="Postalcode prints here" size="30" />
 		<pre>$('#city_input').loceo('postalcode', {key:null}, function(collection){
+	$('#postalcode_output').val('');
 	// Important to check answer
 	if(collection!=null && collection.features!=null && collection.features[0]!=null){
 		$('#postalcode_output').val(collection.features[0].properties.postalcode);
@@ -49,7 +52,7 @@
 
 
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-		<script type="text/javascript" src="jquery.loceo.js"></script>
+		<script type="text/javascript" src="jquery.loceo-1.0.1.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 
@@ -63,6 +66,7 @@
 				 */
 				$('#postalcode_input').loceo('city', {'key':null}, function(feature){
 					// Check answer
+					$('#city_output').val('');
 					if(feature!=null && feature.properties!=null && feature.properties.city!=null){
 						$('#city_output').val(feature.properties.city);
 					}
@@ -74,6 +78,7 @@
 				 */
 				$('#city_input').loceo('postalcode', {'key':null}, function(collection){
 					// Check answer
+					$('#postalcode_output').val('');
 					if(collection!=null && collection.features!=null && collection.features.length>0){
 						$('#postalcode_output').val(collection.features[0].properties.postalcode);
 					}
