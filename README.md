@@ -1,4 +1,5 @@
 #Loceo jQuery Plugin
+##Usage
 The geodetic and geocoding-plugin for jQuery
 
 The underlying REST API is located at https://loceo.se/documentation/postalcode.
@@ -7,7 +8,8 @@ The underlying REST API is located at https://loceo.se/documentation/postalcode.
 This API and plugin is free of charge for requests in the order of thousands per month. You can get current pricing and your own developer key at https://loceo.se.
 
 
-##Postalcode to city
+##Methods
+###Postalcode to city
 Enables you to resolve a postalcode to city. Returns a Geojson-feature with coordinates.
 
 ```javascript
@@ -20,7 +22,7 @@ $('#postalcode_input').loceo('city', {key:null}, function(feature){
 
 End-point: https://api.loceo.se/v1/geocoding/city
 
-##City to postalcode
+###City to postalcode
 Enables you to resolve a city to postalcodes. Notice you can get several hundred of postalcodes which can be to boxes. Returns a Geojson-featureCollection with coordinates.
 
 ```javascript
