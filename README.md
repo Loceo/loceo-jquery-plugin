@@ -10,7 +10,7 @@ This API and plugin is free of charge for requests in the order of thousands per
 
 ##Methods
 ###Postalcode to city
-Enables you to resolve a postalcode to city. Returns a Geojson-feature with coordinates.
+Enables you to resolve a postalcode to city. Returns a [Geojson-feature](http://www.geojson.org/geojson-spec.html#feature-objects) with coordinates.
 
 ```javascript
 $('#postalcode_input').loceo('city', {key:null}, function(feature){
@@ -23,7 +23,7 @@ $('#postalcode_input').loceo('city', {key:null}, function(feature){
 End-point: https://api.loceo.se/v1/geocoding/city
 
 ###City to postalcode
-Enables you to resolve a city to postalcodes. Notice you can get several hundred of postalcodes which can be to boxes. Returns a Geojson-featureCollection with coordinates.
+Enables you to resolve a city to postalcodes. Notice you can get several hundred of postalcodes which can be to boxes. Returns a [Geojson-featureCollection](http://www.geojson.org/geojson-spec.html#feature-collection-objects) with coordinates.
 
 ```javascript
 $('#city_input').loceo('postalcode', {key:null}, function(collection){
@@ -36,7 +36,7 @@ $('#city_input').loceo('postalcode', {key:null}, function(collection){
 End-point: https://api.loceo.se/v1/geocoding/postalcode
 
 ##How to use
-1. Download this plugin and [jQuery](http://jquery.com) (or use [Google CDN](http://jquery.com/download/))
+1. Download this plugin and [jQuery](http://jquery.com) (or use a public [CDN](http://jquery.com/download/))
 
 2. Include jQuery and this plugin right before the `</body>`-tag.
 
@@ -61,4 +61,4 @@ End-point: https://api.loceo.se/v1/geocoding/postalcode
 
 4. Satisfaction!
 
-Not working? Study example.html, [Tutorials:How_jQuery_Works](http://docs.jquery.com/Tutorials:How_jQuery_Works "docs.jquery.com/Tutorials:How_jQuery_Works") and [id-selector](http://api.jquery.com/id-selector/ "api.jquery.com/id-selector/"). Still not working? Check Loceos end-point in your browser.
+Not working? Study example.html, [Tutorials:How_jQuery_Works](http://docs.jquery.com/Tutorials:How_jQuery_Works "docs.jquery.com/Tutorials:How_jQuery_Works") and [id-selector](http://api.jquery.com/id-selector/ "api.jquery.com/id-selector/"). Still not working? Check Loceos [end-point](#methods) in your browser.
